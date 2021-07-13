@@ -17,10 +17,10 @@ var fullscreen_start ={
           ],
     button_label: '次へ',
     on_finish: function(data){
-      nameup = jsPsych.data.get().last(1).values()[0].response.name_up;
-      namedo = jsPsych.data.get().last(1).values()[0].response.name_do;
-      fnameup = jsPsych.data.get().last(1).values()[0].response.fname_up;
-      fnamedo = jsPsych.data.get().last(1).values()[0].response.fname_do;
+      nameup = JSON.parse(data.responses).name_up;
+      namedo = JSON.parse(data.responses).name_do;
+      fnameup = JSON.parse(data.responses).fname_up;
+      fnamedo = JSON.parse(data.responses).fname_do;
       jsPsych.data.addProperties({name01: nameup});
       jsPsych.data.addProperties({name02: namedo});
       jsPsych.data.addProperties({name03: fnameup});
@@ -41,10 +41,10 @@ var name_options_get = {
   ],
   button_label: '次へ',
   on_finish: function(data){
-    onameup1 = jsPsych.data.get().last(1).values()[0].response.oname_up1;
-    onameup2 = jsPsych.data.get().last(1).values()[0].response.oname_up2;
-    onamedo1 = jsPsych.data.get().last(1).values()[0].response.oname_do1;
-    onamedo2 = jsPsych.data.get().last(1).values()[0].response.oname_do2;
+    onameup1 = JSON.parse(data.responses).oname_up1;
+    onameup2 = JSON.parse(data.responses).oname_up2;
+    onamedo1 = JSON.parse(data.responses).oname_do1;
+    onamedo2 = JSON.parse(data.responses).oname_do2;
     jsPsych.data.addProperties({name07: onameup1});
     jsPsych.data.addProperties({name08: onameup2});
     jsPsych.data.addProperties({name09: onamedo1});
